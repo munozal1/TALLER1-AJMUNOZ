@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Inicio</title>
+</head>
+<body>
+    <h1>Bienvenido a la aplicación Flask!</h1>
+    <p>
+        Autenticado: {{ is_authenticated }}<br>
+        Nombre de usuario: {{ username }}
+    </p>
+    {% if is_authenticated %}
+        <a href="{{ url_for('auth.logout') }}">Cerrar sesión</a>
+    {% else %}
+        <a href="{{ url_for('auth.login') }}">Iniciar sesión</a>
+    {% endif %}
+</body>
+</html>
